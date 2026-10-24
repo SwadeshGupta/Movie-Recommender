@@ -1,9 +1,20 @@
+
+# Python
 __pycache__/
 *.py[cod]
 .venv/
 venv/
-.env
+env/
+
+# Secrets
 .streamlit/secrets.toml
-.DS_Store
+.env
+
+# Movie datasets
 data/*.csv
+
+# Generated model files (we will decide how to deploy these)
 model/*.pkl
+
+# Editor
+.vscode/
