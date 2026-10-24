@@ -13,8 +13,8 @@ env/
 # Movie datasets
 data/*.csv
 
-# Generated model files (we will decide how to deploy these)
 model/*.pkl
+
 
 # Editor
 .vscode/
