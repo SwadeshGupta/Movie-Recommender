@@ -96,7 +96,8 @@ def main():
     model_movies = movies[["movie_id", "title", "tags"]].copy().reset_index(drop=True)
     vectorizer = CountVectorizer(max_features=5000, stop_words="english")
     vectors = vectorizer.fit_transform(model_movies["tags"])
-    similarity = cosine_similarity(vectors)
+    similarity = cosine_similarity(vectors).astype("float32")
+    print(f"Similarity matrix size: {similarity.nbytes / (1024**2):.2f} MB")
 
     MODEL_DIR.mkdir(parents=True, exist_ok=True)
     with (MODEL_DIR / "movie_list.pkl").open("wb") as file:
